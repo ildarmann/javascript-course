@@ -1,0 +1,36 @@
+/*
+ 1.	Сохранить HTML-содержимое веб-страницы yandex.ru в локальном файле. Открыть этот файл в браузере. Написать скрипт, который выводит все тексты, находящиеся на странице, в алфавитном порядке.
+ 2.	Написать функцию insertAfter (element, refElement), добавляющую element после узла refElement. Должны работать тестовые примеры:  insertAfter(elem, body.firstChild); insertAfter(elem, body.lastChild);
+ 3.	Напишите функцию removeChildren (element), которая удаляет всех потомков элемента.
+ 4.	Написать интерфейс для создания списка <ul>. У пользователя многократно запрашивается текст, который становится элементом списка. Процесс заканчивается, когда пользователь вводит пустую строку или нажимает Esc.
+
+*/
+
+//Task 1
+
+function searchDOM(node) {
+	let resNodes = [];
+  if (node.nodeType === Node.TEXT_NODE) {
+  	let text = node.nodeValue.trim();
+    if(text != '')   resNodes.push(node.nodeValue.trim());
+  }
+  for (let i = 0; i < node.childNodes.length; i++) {
+    resNodes = resNodes.concat(searchDOM(node.childNodes[i]));
+  }
+  return resNodes.sort();
+}
+let result = searchDOM(document.body);
+console.log(result.length)
+console.log(result)
+
+//Task 2 
+
+/*2.	Написать функцию insertAfter (element, refElement), добавляющую element после узла refElement. Должны работать тестовые примеры:  insertAfter(elem, body.firstChild); insertAfter(elem, body.lastChild);
+*/
+function insertAfter (element, refElement){
+	document.appendChild(element);
+}
+
+
+insertAfter(document.createTextNode('text1'), document.body.firstChild);
+insertAfter(document.createTextNode('text2'), document.body.lastChild);

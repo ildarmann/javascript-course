@@ -1,0 +1,33 @@
+// ===== lab 8 ====
+/*
+1. Написать функцию, которая в половине случаев вычисляет площадь круга заданного радиуса, 
+  а в половине случаев возбуждает исключение. Для получения псевдослучайных чисел воспользуйтесь 
+  функцией Math.random(), которая выдаёт числа в интервале 0..1.
+Вызовите функцию несколько раз для проверки.
+Вызовите функцию 100 раз и сосчитайте количество удачных и неудачных вызовов.
+
+*/
+
+var mySquare = function(radius){
+  var r = Math.random();
+  if(r < 0.5)
+    return Math.PI * radius * radius;
+  else
+    throw "Can't calc Circle square!"
+ 
+}
+
+var goodResCalc = 0;
+var badResCalc = 0;
+
+for(var i = 0; i < 100; i++){
+  var res;
+  try{
+    res = mySquare(5);  
+    goodResCalc++;
+  } catch (ex) {
+    res = ex;
+    badResCalc++;
+  }
+}
+console.log("Successfuly calced: " + goodResCalc + ", error count: " + badResCalc)

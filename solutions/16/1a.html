@@ -1,0 +1,11 @@
+redirect in <span id="tr"></span> seconds
+<script>
+	var rest = 5;
+	setInterval(
+		function(){
+			rest--; 
+			document.getElementById('tr').innerHTML = rest;
+		},
+		1000
+	);
+</script>

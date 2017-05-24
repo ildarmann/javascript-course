@@ -1,0 +1,21 @@
+/*
+s = 1 + 2 + " blind mice"; // 3b
+alert(s);
+t = "blind mice: " + 1 + 2; //b12
+alert(t);
+*/
+
+/*
+var a, b;
+if ((a == null) && (b++ > 10)) stop( ); // if = false
+alert((a == null) && (b++ > 10));
+
+*/
+
+var year = 40 // prompt();
+if (!(year % 4) && !!(year % 400)) {
+  alert('год ' + year + ' високосный');
+} else {
+  alert('год ' + year + ' не високосный');
+}
+

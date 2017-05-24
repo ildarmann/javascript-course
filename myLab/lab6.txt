@@ -1,0 +1,49 @@
+// ===== lab 6 ====
+/*
+1. Написать программу, запрашивающую строку и изменяющую регистр букв. Например, строка 'The Quick Brown Fox' должна быть преобразована в 'tHE qUICK bROWN fOX'.
+*/
+/*
+var str = 'The Quick Brown Fox';
+ var resultStr = '';
+ 
+ for(let char in str) {
+   if('A'.charCodeAt(0) <= str.charCodeAt(char) 
+      && 'Z'.charCodeAt(0) >= str.charCodeAt(char) ) {
+     resultStr += str[char].toLowerCase();
+   } else {
+    resultStr += str[char].toUpperCase();
+   }
+     
+   
+ }
+
+alert(resultStr);
+*/
+
+
+// task 2
+/*
+2. Написать программу, выводящую все подстроки строки
+Пример : dog
+Вывод : d, do, dog, o, og, g
+*/
+
+var str = 'dog';
+var resultStr = '';
+for(var i = 0; i < str.length ; i++){
+  var lex = ''
+  for(var y = i+1; y <= str.length ; y++){
+    
+    lex += str.substring(i, y) + ', ';
+    
+  }
+  resultStr += lex + ', '
+  
+}
+alert(resultStr);
+
+
+//task 3
+/*
+3. Написать программу, конвертирующую объект в список пар [свойство, значение]
+*/
