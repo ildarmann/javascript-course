@@ -1,0 +1,12 @@
+//Task 13
+
+let ps = document.getElementsByTagName('p');
+/*ps.forEach(elem => {
+	elem.style.color = 'red';
+});*/
+
+for(i in ps){
+	console.log(ps[i]);
+	//ps[i].style.color = 'red';
+}
+//console.log(ps);

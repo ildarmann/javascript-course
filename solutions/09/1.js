@@ -1,5 +1,5 @@
 function getCallerName(){
-  return getCallerName.caller.name;
+  return arguments.callee.caller.name;
 }
 
 function test(){
