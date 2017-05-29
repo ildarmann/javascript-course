@@ -8,7 +8,7 @@ function moveButton(e) {
   button.style.color = ['red','black'][parentNum];
   setTimeout(
     function(){
-      parent.removeChild(button);
+      //parent.removeChild(button);
       other.appendChild(button);
     },
     200

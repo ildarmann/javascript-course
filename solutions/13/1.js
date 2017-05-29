@@ -1,4 +1,8 @@
-var els = document.querySelectorAll('*');
-for(let i=0; i<els.length; i++){
-  els[i].style.color = 'red';
+function changeBgcolor(selector,bgcolor){
+  let els=document.querySelectorAll(selector);
+  els.forEach(e=>{
+    e.style.backgroundColor=bgcolor;
+  });
 }
+
+changeBgcolor('a','#ff0000');
