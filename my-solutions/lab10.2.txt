@@ -1,0 +1,18 @@
+// lab 10.2
+
+//Task 1
+function welcome(){
+	arguments.join = [].join
+	return 'Welcome ' + arguments.join();
+}
+console.log(welcome('Jonh', 'Peter', 'Mary'));
+
+//Task 2
+function Person(name){
+ this.name = name;
+ this.sayHello = (friends) => {
+ 	 friends.forEach(elem => console.log(this.name + ' say hello to ' + elem));
+ }
+}
+let per = new Person('Ildar');
+per.sayHello(['Jonh', 'Peter', 'Mary']);
